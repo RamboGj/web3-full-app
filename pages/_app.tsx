@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Header from './'
+import Header from './header'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

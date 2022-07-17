@@ -1,5 +1,7 @@
 export default function Header() {
     return (
-        <div>HEADER</div>
+        <h1 className="text-3xl font-bold">
+            header ww
+        </h1>
     )
 }
