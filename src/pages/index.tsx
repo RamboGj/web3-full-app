@@ -7,6 +7,7 @@ import TabBox from "../components/TabBox"
 import { Menu, Transition } from '@headlessui/react'
 import metamask from '../public/metamask.png'
 import phantom from '../public/phantom.png'
+import Image from 'next/image'
 
 export default function Home() {
   const { 
@@ -57,19 +58,20 @@ export default function Home() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="w-[355px] absolute right-0 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+              <Menu.Items className="w-[255px] md:w-[355px] absolute right-0 mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="px-1 py-1 space-y-2">
                   <Menu.Item>
-                    <div 
+                    <div
+                      key={'dasdasdas'} 
                       onClick={() => {
                         authenticate({
                           signingMessage: "Sign to log in to web3 dapp"
                         })
                       }} 
                       className="flex items-center space-x-4 px-2 hover:bg-slate-500 transition duration-500 rounded-xl">
-                      <img src={metamask.src} alt="logo metamask" className="w-10 h-10"/>
+                      <img key={metamask.src} src={metamask.src} alt="logo metamask" className="w-10 h-10"/>
                       <button
-                        className='w-[320px] mx-auto text-black font-bold group flex w-full items-center rounded-xl px-2 py-4 text-sm'
+                        className='w-[220px] md:w-[320px] mx-auto text-black font-bold group flex w-full items-center rounded-xl px-2 py-4 text-sm'
                       >
                         Connect with Metamask
                       </button>
@@ -77,6 +79,7 @@ export default function Home() {
                   </Menu.Item>
                   <Menu.Item>
                     <div 
+                      key={'dasdasdasdasdasdasasd'} 
                       onClick={() => {
                         authenticate({
                           type: 'sol',
@@ -84,9 +87,9 @@ export default function Home() {
                         })
                       }}
                       className="flex items-center space-x-4 px-2 hover:bg-slate-500 transition duration-500 rounded-xl">
-                      <img src={phantom.src} alt="logo phantom" className="w-10 h-10"/>
+                      <img key={phantom.src} src={phantom.src} alt="logo phantom" className="w-10 h-10"/>
                       <button
-                        className='w-[320px] mx-auto text-black font-bold group flex w-full items-center rounded-md px-2 py-4 text-sm'
+                        className='w-[220px] md:w-[320px] mx-auto text-black font-bold group flex w-full items-center rounded-md px-2 py-4 text-sm'
                       >
                         Connect with Phantom
                       </button>
