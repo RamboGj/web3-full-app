@@ -3,6 +3,7 @@ import { useMoralis } from "react-moralis"
 import { RefreshIcon } from "@heroicons/react/solid"
 import Head from "next/head"
 import Header from "../components/Header"
+import TabBox from "../components/TabBox"
 
 export default function Home() {
   const { 
@@ -54,6 +55,9 @@ export default function Home() {
           logout={logout}
           user={user}
           />
+          <div className="flex-1 w-full bg-slate-800 h-screen px-32 py-24">
+            <TabBox />
+          </div>
       </div>
     </>
   )
