@@ -62,14 +62,13 @@ export default function Home() {
                 <div className="px-1 py-1 space-y-2">
                   <Menu.Item>
                     <div
-                      key={'dasdasdas'} 
                       onClick={() => {
                         authenticate({
                           signingMessage: "Sign to log in to web3 dapp"
                         })
                       }} 
                       className="flex items-center space-x-4 px-2 hover:bg-slate-500 transition duration-500 rounded-xl">
-                      <img key={metamask.src} src={metamask.src} alt="logo metamask" className="w-10 h-10"/>
+                      <img src={metamask.src} alt="logo metamask" className="w-10 h-10"/>
                       <button
                         className='w-[220px] md:w-[320px] mx-auto text-black font-bold group flex w-full items-center rounded-xl px-2 py-4 text-sm'
                       >
@@ -79,7 +78,6 @@ export default function Home() {
                   </Menu.Item>
                   <Menu.Item>
                     <div 
-                      key={'dasdasdasdasdasdasasd'} 
                       onClick={() => {
                         authenticate({
                           type: 'sol',
@@ -87,7 +85,7 @@ export default function Home() {
                         })
                       }}
                       className="flex items-center space-x-4 px-2 hover:bg-slate-500 transition duration-500 rounded-xl">
-                      <img key={phantom.src} src={phantom.src} alt="logo phantom" className="w-10 h-10"/>
+                      <img src={phantom.src} alt="logo phantom" className="w-10 h-10"/>
                       <button
                         className='w-[220px] md:w-[320px] mx-auto text-black font-bold group flex w-full items-center rounded-md px-2 py-4 text-sm'
                       >

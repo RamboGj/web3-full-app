@@ -90,7 +90,7 @@ export default function TabBox() {
             >
                 {posts.map((hehe) => {
                   return (
-                    <div>
+                    <div key={hehe.id}>
                       {hehe.commentCount}
                     </div>
                   )
