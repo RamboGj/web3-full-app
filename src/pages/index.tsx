@@ -1,11 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useMoralis } from "react-moralis"
 import { RefreshIcon } from "@heroicons/react/solid"
 import Head from "next/head"
 import Header from "../components/Header"
 
 export default function Home() {
-  const { authError, authenticate, isAuthenticating, isAuthenticated } = useMoralis()
+  const { 
+    authError, 
+    authenticate, 
+    isAuthenticating, 
+    isAuthenticated,
+    user,
+    logout,
+    isLoggingOut
+   } = useMoralis()
+
+   useEffect(() => {
+    console.log(user)
+   }, [])
 
   if (!isAuthenticated) {
     return (
@@ -19,7 +31,9 @@ export default function Home() {
             Hello, web3
           </h1>
           <button 
-            onClick={() => authenticate()}
+            onClick={() => authenticate({
+              signingMessage: "Sign to log in web3 app"
+            })}
             className="px-8 py-4 bg-slate-300 bg-gradient-to-r from-slate-500 rounded-xl flex justify-center font-bold w-[355px] hover:bg-slate-500 transition duration-300">
             {isAuthenticating ? <RefreshIcon className="animate-spin w-8 h-8 text-slate-900" aria-hidden="true"/> : 'Connect your wallet'}
           </button>
@@ -35,7 +49,11 @@ export default function Home() {
         <title>Dashboard | web3</title>
       </Head>
       <div>
-        <Header />
+        <Header 
+          loggingOut={isLoggingOut}
+          logout={logout}
+          user={user}
+          />
       </div>
     </>
   )
