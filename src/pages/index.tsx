@@ -94,13 +94,8 @@ export default function Home() {
                   </Menu.Item>
                 </div>
               </Menu.Items>
-
             </Transition>
           </Menu>
-
-          {/* onClick={() => authenticate({
-              signingMessage: "Sign to log in web3 app"
-            })} */}
         </div>  
       </div>
       </>
