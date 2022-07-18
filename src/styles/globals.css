@@ -6,4 +6,5 @@
 
 body {
     @apply font-custom;
+    @apply bg-slate-900;
 }
