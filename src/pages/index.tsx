@@ -8,6 +8,7 @@ import { Menu, Transition } from '@headlessui/react'
 import metamask from '../public/metamask.png'
 import phantom from '../public/phantom.png'
 import Image from 'next/image'
+import Profile from "../components/Profile"
 
 export default function Home() {
   const { 
@@ -115,7 +116,9 @@ export default function Home() {
           user={user}
           />
           <div className="flex-1 bg-slate-800 h-screen px-32 py-24">
-            <TabBox />
+            <TabBox
+              children={<Profile />} 
+            />
           </div>
       </div>
     </>

@@ -1,18 +1,23 @@
-import { useState } from 'react'
+import { ReactElement, useState } from 'react'
 import { Tab } from '@headlessui/react'
 
-export default function TabBox() {
+interface TabBoxProps {
+  children: ReactElement
+}
+
+export default function TabBox(props: TabBoxProps) {
   const [selectedId, setSelectedId] = useState<number>(0)
 
   let categories = [
-    { name: "Balance", id: 0 },
-    { name: "Transations", id: 1 },
-    { name: "NFTs", id: 2 },
-    { name: "Send ETH", id: 3 },
+    { name: "Profile", id: 0 },
+    { name: "Balance", id: 1 },
+    { name: "Transations", id: 2 },
+    { name: "NFTs", id: 3 },
+    { name: "Send ETH", id: 4 },
   ]
 
   return (
-    <div className="w-full px-2 py-16 sm:px-0 mx-auto">
+    <div className="w-full px-2 py-8 sm:px-0 mx-auto">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl p-1 bg-slate-900">
           {categories.map((category) => (
@@ -32,7 +37,7 @@ export default function TabBox() {
                   key={category.id}
                   className='w-full h-full bg-slate-400 rounded-xl'
                 >
-                  
+                {category.id === 0 ? props.children : category.id === 1 ? 'Balance' : category.id === 2 ? 'Transactions':category.id === 3 ? 'NFTs': 'Send ETH'}
                 </Tab.Panel>
               )
             })}
