@@ -116,9 +116,10 @@ export default function Home() {
           user={user}
           />
           <div className="flex-1 bg-slate-800 h-screen px-32 py-24">
-            <TabBox
-              children={<Profile />} 
-            />
+            <TabBox>
+              <Profile/>
+            </TabBox>
+              
           </div>
       </div>
     </>
