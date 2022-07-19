@@ -1,6 +1,7 @@
 
 ## Technologies
   - HeadlessUI
+  - TailwindCSS
   - NextJS
   - Typescript
   - Moralis
